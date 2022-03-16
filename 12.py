@@ -4,7 +4,7 @@ import numpy as np
 import serial
 import datetime
 
-seri = serial.Serial(port='COM5', baudrate=115200)
+seri = serial.Serial(port='COM4', baudrate=115200)
 seri_2 = serial.Serial(port='COM3', baudrate=115200)
 ''', parity=serial.PARITY_NONE,
                      stopbits=serial.STOPBITS_ONE,
