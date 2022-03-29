@@ -64,8 +64,6 @@ def draw_lines(img, lines):
             x1, y1, x2, y2 = line.reshape(4) # 라인의 끝점
             parameter = np.polyfit((x1, x2), (y1, y2), 1)
             slope = parameter[0] # 라인의 기울기
-            if(slope == 0):
-                print("좆됐다!")
             intercept = parameter[1] # 라인의 y절편
             under_x = (360 - intercept) / slope
 
@@ -75,7 +73,7 @@ def draw_lines(img, lines):
 
             if (under_x < -2**20 or 280 < under_x <360 or under_x > 2**20):
                 pass
-                print("차선이탈", under_x)
+                print("차선이탈", "%.2f" %under_x)
 
             if(int(abs(under_x)) < 10000):
                 STRA[0]=c1
